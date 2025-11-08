@@ -15,5 +15,11 @@
 //     return view('welcome');
 // });
 
-Route::get('/', "PageController@home");
+Route::get('/', "PageController@home"); 
+Route::get('/peripherals', "PageController@peripherals");
+Route::get('/peripherals/addnew', "PageController@peripheralsaddnew");
+Route::post('/peripherals/save', "PageController@peripheralssave");
+
+
+
 
