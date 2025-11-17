@@ -17,6 +17,7 @@
           <th>Kategori</th>
           <th>Harga</th>
           <th>Image</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -34,6 +35,10 @@
             @else
                 <img src="{{ asset('/storage/image_path/no-image.jpg')}}" alt="No Image" width="80" height="80">
             @endif
+          </td>
+          <td>
+              <a href="/peripherals/editform/{{ $p->id }}" class="btn btn-success"><i class="bi bi-pencil-square"></i></a>
+              <a href="/peripherals/delete/{{ $p->id }}" class="btn btn-danger"><i class="bi bi-trash3"></i></a>
           </td>
         </tr>
         @endforeach
