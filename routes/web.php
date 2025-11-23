@@ -22,6 +22,13 @@ Route::post('/peripherals/save', "PageController@peripheralssave");
 Route::get('/peripherals/editform/{id}', "PageController@peripheralseditform");
 Route::put('/peripherals/update/{id}', "PageController@peripheralsupdate");
 Route::get('/peripherals/delete/{id}', "PageController@peripheralsdelete");
+Route::get('/users', "PageController@users");
+Route::get('/users/addnew', "PageController@usersaddnew");
+Route::post('/users/save', "PageController@userssave");
+Route::get('/users/delete/{id}', "PageController@usersdelete");
+Route::get('/login', "AuthController@login");
+
+
 
 
 

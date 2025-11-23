@@ -5,17 +5,25 @@
   <a href="/peripherals/addnew" class="btn btn-primary mb-3 float-right">
     <i class="bi bi-plus-lg"></i>
   </a>
-
+    <!-- POP UP -->
+      @if (session('alert'))
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>{{ session('alert') }}</strong>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      @endif
   <div class="table-responsive">
     <table class="display" id="example">
       <thead>
         <tr>
           <th>ID</th>
           <th>BG_ID</th>
-          <th>Nama</th>
+          <th>Name</th>
           <th>Brand</th>
-          <th>Kategori</th>
-          <th>Harga</th>
+          <th>Category</th>
+          <th>Price</th>
           <th>Image</th>
           <th>Action</th>
         </tr>

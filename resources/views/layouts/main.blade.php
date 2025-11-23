@@ -24,6 +24,14 @@
             <li class="nav-item">
               <a class="nav-link {{ Request::is('peripherals*') ? 'active' : '' }}" href="/peripherals">Peripherals</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link {{ Request::is('users*') ? 'active' : '' }}" href="/users">Users</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white {{ Request::is('login') ? 'active' : '' }}" href="/login">Login</a>
+            </li>
           </ul>
         </div>
       </div>
