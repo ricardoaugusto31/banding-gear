@@ -29,9 +29,18 @@
             </li>
           </ul>
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link text-white {{ Request::is('login') ? 'active' : '' }}" href="/login">Login</a>
-            </li>
+            @guest
+              <li class="nav-item">
+                <a class="nav-link text-white {{ Request::is('login') ? 'active' : '' }}" href="/login">Login</a>
+              </li>
+            @else
+              <li class="nav-item">
+                <span class="nav-link text-white">{{ Auth::user()->name }}</span>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="/logout">Logout</a>
+              </li>
+            @endguest
           </ul>
         </div>
       </div>

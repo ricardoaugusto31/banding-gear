@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Login</title>
+    <title>Sign Up</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,19 +16,40 @@
                 <div class="card">
                     <div class="card-header"></div>
                     <div class="card-body">
-                        <form action="/ceklogin" method="post">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul class="mb-0">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
+                        @if (session('success'))
+                            <div class="alert alert-success">{{ session('success') }}</div>
+                        @endif
+
+                        <form action="/signup" method="post">
                             @csrf
                             <div class="form-group pt-3">
-                                <input type="email" name="email" class="form-control" placeholder="Enter your email">
+                                <input type="text" name="name" class="form-control" placeholder="Full name" value="{{ old('name') }}">
+                            </div>
+                            <div class="form-group pt-3">
+                                <input type="email" name="email" class="form-control" placeholder="Enter your email" value="{{ old('email') }}">
                             </div>
                             <div class="form-group pt-3">
                                 <input type="password" name="password" class="form-control" placeholder="Enter your password">
                             </div>
                             <div class="form-group pt-3">
-                                <button class="btn btn-primary btn-block">Login</button>
+                                <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm password">
+                            </div>
+                            <div class="form-group pt-3">
+                                <button class="btn btn-primary btn-block">Sign Up</button>
                             </div>
                         </form>
-                        <div><a href="/signup">Dont have an account? Sign up here</a></div>
+
+                        <div><a href="/login">Already have an account? Login here</a></div>
                     </div>
                 </div>
             </div>

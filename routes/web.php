@@ -26,7 +26,11 @@ Route::get('/users', "PageController@users");
 Route::get('/users/addnew', "PageController@usersaddnew");
 Route::post('/users/save', "PageController@userssave");
 Route::get('/users/delete/{id}', "PageController@usersdelete");
+Route::get('/signup', "AuthController@signup");
+Route::post('/signup', "AuthController@register");
 Route::get('/login', "AuthController@login");
+Route::post('/ceklogin', "AuthController@ceklogin");
+Route::get('/logout', "AuthController@logout");
 
 
 
